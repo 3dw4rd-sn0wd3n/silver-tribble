@@ -1,0 +1,24 @@
+name: Discord RPC
+
+on:
+  push:
+  schedule:
+    - cron: '*/15 * * * *'  # Запуск каждые 15 минут
+
+jobs:
+  update_rpc:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout репозиторий
+        uses: actions/checkout@v3
+
+      - name: Установка Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Установка зависимостей
+        run: pip install pypresence
+
+      - name: Запуск RPC
+        run: python rpc_script.py
