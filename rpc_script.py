@@ -6,7 +6,7 @@ import time
 with open("rests.json", "r") as file:
     config = json.load(file)
 
-client_id = config["clientID"]  # ID приложения Discord
+client_id = config["1383557334097203332"]  # ID приложения Discord
 rpc = Presence(client_id)
 rpc.connect()
 
